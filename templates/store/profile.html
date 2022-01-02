@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="mask"></div>
+  <navbar class="navbar">
+    <div class="container">
+      <div class="navbar__wrap">
+        <a href="#" class="navbar__logo">
+          <object type="image/svg+xml" data="./img/Logo.svg"></object>
+        </a>
+        <ul class="navbar__menu">
+          <li class="navbar__item"><a href="#" class="navbar__link">
+            Новости
+          </a></li>
+          <li class="navbar__item"><a href="#" class="navbar__link">
+            Поддержка
+          </a></li>
+          <li class="navbar__item"><a href="#" class="navbar__link">
+            F.A.Q
+          </a></li>
+          <li class="navbar__item"><a href="#" class="navbar__link">
+            О нас
+          </a></li>
+          <div class="navbar__mobile-menu">
+            <li class="navbar__item"><a href="#" class="navbar__link">
+              Вход
+            </a></li>
+            <span class="navbar__sub-item">
+              <a href="#" class="navbar__sub-link">
+                Личный кабинет
+              </a>
+            </span>
+            <span class="navbar__sub-item">
+              <a href="#" class="navbar__sub-link">Выход</a>
+            </span>
+          </div>
+        </ul>
+        <div class="navbar__block">
+          <a href="#" class="navbar__login">
+            Вход
+          </a>
+          <div class="burger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-logined">
+        <li class="navbar__item"><a href="#" class="navbar__link">
+          Статьи
+        </a></li>
+        <li class="navbar__item"><a href="#" class="navbar__link">
+          Календарь
+        </a></li>
+        <li class="navbar__item"><a href="#" class="navbar__link">
+          Боты
+        </a></li>
+        <div class="navbar__nav">
+          <a href="#" class="navbar__personal">Личный кабинет</a>
+          <a href="#" class="navbar__exit">Выход</a>
+        </div>
+      </ul>
+    </div>
+  </navbar>
+
+  <section class="profile">
+    <div class="container">
+      <h1 class="profile__title title">
+        Личный кабинет
+      </h1>
+
+      <div class="profile__block bots-wrap__block accordion-block">
+        <div class="bots-wrap__visible profile__wrap">
+            <h4 class="profile__text">Подписка активна до:</h4>
+            <h4 class="profile__date">
+              24.03.02
+            </h4>
+          <a href="#" class="btn btn-desktop bots__btn profile__btn">
+            Продлить подписку
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./js/main.js"></script>
+</body>
+</html>

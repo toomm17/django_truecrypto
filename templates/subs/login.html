@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Вход
+{% endblock %}
+
+{% block navbar %}
+    {% include 'include/navbar.html' %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="email-form">
+            <h2>Введите вашу почту</h2>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-field">
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="from-button">Войти</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

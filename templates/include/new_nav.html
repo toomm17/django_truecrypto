@@ -1,0 +1,75 @@
+{% load static %}
+
+  <navbar class="navbar">
+    <div class="container">
+      <div class="navbar__wrap">
+        <a href="{% url 'home' %}" class="navbar__logo">
+          <object type="image/svg+xml" data="{% static 'img/Logo.svg' %}"></object>
+        </a>
+        <ul class="navbar__menu">
+          {% url 'news' as url %}
+          <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+            Новости
+          </a></li>
+         {% url 'support' as url %}
+          <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+            Поддержка
+          </a></li>
+         {% url 'faqs' as url %}
+          <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+            F.A.Q
+          </a></li>
+
+          <div class="navbar__mobile-menu">
+            {% if not request.user.is_authenticated %}
+            {% url 'login' as url %}
+              <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+                Вход
+              </a></li>
+            {% else %}
+            <span class="navbar__sub-item">
+              <a href="#" class="navbar__sub-link">Выход</a>
+            </span>
+            {% endif %}
+          </div>
+        </ul>
+        {% if not request.user.is_authenticated %}
+        <div class="navbar__block">
+          {% url 'login' as url %}
+          <a href="{{ url }}" class="navbar__login" {% if request.path == url %} style="color: #FF8522;"{% endif %}>
+            Вход
+          </a>
+       </div>
+      {% else %}
+      <div class="navbar__block">
+          {% url 'logout' as url %}
+          <a href="{{ url }}" class="navbar__login" {% if request.path == url %} style="color: #FF8522;"{% endif %}>
+            Выход
+          </a>
+        {% endif %}
+        <div class="burger">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+        </div>
+      </div>
+    </div>
+      {% if request.user.is_authenticated %}
+      <ul class="navbar-logined">
+        {% url 'articles_category' as url %}
+        <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+          Статьи
+        </a></li>
+        {% url 'calendar' as url %}
+        <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+          Календарь
+        </a></li>
+        {% url 'bots' as url %}
+        <li {% if request.path == url %} class="active-page navbar__item" {% else %} class="navbar__item" {% endif %}><a href="{{ url }}" class="navbar__link">
+          Боты
+        </a></li>
+      </ul>
+      {% endif %}
+  </div>
+</div>
+</navbar>

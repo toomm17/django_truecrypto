@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  F.A.Q
+{% endblock %}
+
+{% block navbar %}
+    {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <section class="bots">
+    <div class="container">
+      <h1 class="bots__title title">FAQ</h1>
+      <div class="bots__wrap bots-wrap">
+        <div class="bots-wrap__block accordion-block">
+          <div class="faq-visible bots-wrap__visible">
+            <div class="faq-polygon bots__polygon accordion-block__polygon">
+              <svg class="bots__polygon-svg"  width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-color" d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#FF8522"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0077FF"/>
+                <stop offset="1" stop-color="#0077FF"/>
+                </linearGradient>
+                </defs>
+                </svg>
+              <object class="bot-svg" type="image/svg+xml" data="{% static 'img/accross.svg' %}"></object>
+              <div class="bots__line"></div>
+            </div>
+              <h4 class="bots__title">
+                Кто мы такие и чем занимаемся ?
+              </h4>
+          </div>
+          <div class="faq-panel bots__panel accordion-block__panel">
+            <p>
+              Мы онлайн-школа TrueCrypto. Ваши проводники в мир криптовалюты. У нас есть множество обучающих статей, календарь событий, группа в телеграмме с анонсами различных событий, а также чат единомышленников. 
+              Наша задача поставить на правильный путь каждого, кто желает разобраться в сфере криптовалют и зарабатывать на этом.
+            </p>
+          </div>
+        </div>
+        <div class="bots-wrap__block accordion-block">
+          <div class="faq-visible bots-wrap__visible">
+            <div class="faq-polygon bots__polygon accordion-block__polygon">
+              <svg class="bots__polygon-svg"  width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-color" d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#FF8522"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0077FF"/>
+                <stop offset="1" stop-color="#0077FF"/>
+                </linearGradient>
+                </defs>
+                </svg>
+              <object class="bot-svg" type="image/svg+xml" data="{% static 'img/accross.svg' %}"></object>
+              <div class="bots__line"></div>
+            </div>
+              <h4 class="bots__title">
+                Как оплатить подписку на TrueCrypto ?
+              </h4>
+          </div>
+          <div class="faq-panel bots__panel accordion-block__panel">
+            <p>
+              Для того, чтобы оплатить подписку и получить доступ ко всем функциям проекта TrueCrypto, вам надо перейти в личные сообщения к нашему <a href="https://t.me/TrueCryptoPay_bot">телеграм-боту</a>, начать с ним диалог, выбрать раздел пополнения баланса и совершить оплату в одной из криптовалют. Инструкция к оплате прикреплена в сообщении бота. 
+              После пополнения баланса вы должны оформить подписку в соответствующем разделе бота, выбрав срок подписки, который вам подходит. После оплаты у вас появится доступ ко всем разделам как на сайте, так и в телеграме.
+            </p>
+          </div>
+        </div>
+        <div class="bots-wrap__block accordion-block">
+          <div class="faq-visible bots-wrap__visible">
+            <div class="faq-polygon bots__polygon accordion-block__polygon">
+              <svg class="bots__polygon-svg"  width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-color" d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#FF8522"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0077FF"/>
+                <stop offset="1" stop-color="#0077FF"/>
+                </linearGradient>
+                </defs>
+                </svg>
+              <object class="bot-svg" type="image/svg+xml" data="{% static 'img/accross.svg' %}"></object>
+              <div class="bots__line"></div>
+            </div>
+              <h4 class="bots__title">
+                Какие способы оплаты принимает TrueCrypto ?
+              </h4>
+          </div>
+          <div class="faq-panel bots__panel accordion-block__panel">
+            <p>
+              Мы принимаем оплату только в криптовалюте, а именно в BUSD или USDT. Как купить криптовалюту на бирже Binance вы можете почитать в специальном гайде от нас: <a href="https://telegra.ph/Instrukciya-dlya-oplaty-podpiski-TrueCrypto-09-06">читать тут</a>
+            </p>
+          </div>
+        </div>
+        <div class="bots-wrap__block accordion-block">
+          <div class="faq-visible bots-wrap__visible">
+            <div class="faq-polygon bots__polygon accordion-block__polygon">
+              <svg class="bots__polygon-svg"  width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-color" d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#FF8522"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0077FF"/>
+                <stop offset="1" stop-color="#0077FF"/>
+                </linearGradient>
+                </defs>
+                </svg>
+              <object class="bot-svg" type="image/svg+xml" data="{% static 'img/accross.svg' %}"></object>
+              <div class="bots__line"></div>
+            </div>
+              <h4 class="bots__title">
+                Какие функции имеются в TrueCrypto ?
+              </h4>
+          </div>
+          <div class="faq-panel bots__panel accordion-block__panel">
+            <p>
+              На данный момент в нашем проекте вы можете получить доступ к:
+<p>- Обучающему материалу, которая составлена как для полных новичков, так и уже опытных криптоэнтузиастов. Каждую неделю, наши редакторы пишут для вас полезные статьи, которые пополнят ваши знания в мире криптовалюты.</p>
+<br>
+<p>- Календарю событий, который расположен на сайте, имеет максимально удобный интерфейс и составлена экспертами своего дела. Он хранит в себе информацию только о лучших событиях в мире криптовалюты. Именно с помощью календаря вы сможете увеличить свой капитал, просто участвуя в разных темах.</p>
+<br>
+<p>- Закрытому чату в телеграме, где мы будем вместе обсуждать всё, что творится в мире криптовалюты.</p>
+<br>
+<p>- Постоянную поддержку от модераторов в чате, которые имеют достаточный опыт в этой сфере, чтобы вести за ручку новичков.</p>
+<br>
+<p>- Индивидуальным ботам, которые будут написаны нашим разработчиком только для наших подписчиков. Боты будут для разных ситуаций: автоматизация, абуз, обход покупок и пр.</p>
+<br>
+<p>- И многим другим интересным функциям, которые дадут вам возможность изучить эту сферу максимально подробно и заработать неплохой капитал</p>
+            </p>
+          </div>
+        </div>
+
+        <div class="bots-wrap__block accordion-block">
+          <div class="faq-visible bots-wrap__visible">
+            <div class="faq-polygon bots__polygon accordion-block__polygon">
+              <svg class="bots__polygon-svg"  width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="fill-color" d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#FF8522"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0077FF"/>
+                <stop offset="1" stop-color="#0077FF"/>
+                </linearGradient>
+                </defs>
+                </svg>
+              <object class="bot-svg" type="image/svg+xml" data="{% static 'img/accross.svg' %}"></object>
+              <div class="bots__line"></div>
+            </div>
+              <h4 class="bots__title">
+                Наши тарифы
+              </h4>
+          </div>
+          <div class="faq-panel bots__panel accordion-block__panel">
+            <p>1 месяц - 39$</p> 
+            <p>3 месяца - 109$ (7% скидка)</p>
+            <br>
+            <p>6 месяцев - 209$ (10% скидка)</p>
+            <br>
+            <p>12 месяцев - 399$ (15% скидка)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+
+function accordionEvent(wrap){
+  let accordionBtns = wrap.querySelectorAll('.accordion-block__polygon');
+
+  accordionBtns.forEach(btn => {
+    let parentBlock = btn.parentElement.parentElement;
+    
+    btn.addEventListener('click', function(){
+      let panel = parentBlock.querySelector('.accordion-block__panel');
+
+      parentBlock.classList.toggle('accordion-active')
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+        panel.style.marginTop =  null;
+      } else {
+        panel.style.marginTop =  '40px';
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    })
+  });
+  
+}
+
+accordionEvent(document.querySelector('.bots-wrap'))
+  </script>
+
+{% endblock %}

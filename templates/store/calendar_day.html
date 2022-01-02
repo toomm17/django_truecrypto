@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load tags %}
+
+
+{% block title %}
+  Календарь
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+    <section class="calendar">
+    <div class="container">
+      <div class="calendar__wrap">
+      <button class="calendar__btn calendar__filter-btn slider-btn btn">Краткая информация</button>
+      <div class="calendar__buttons row">
+        <a class="calendar__btn calendar__prev slider-btn btn slider-btn-left" href="{% url 'calendar' %}">
+          <object type="image/svg+xml" data="{% static 'img/prev.svg' %}"></object>
+          Назад
+        </a>
+      </div>
+        <div class="calendar__filter-block calendar-filter">
+          <svg class="filter-modal-cross" width="30" height="30" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_i_144_30)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M128.759 148.881L148.384 129.257L94.0912 74.8175L148.522 20.4605L128.884 0.849448L74.4935 55.1668L20.1865 0.712891L0.562203 20.3372L54.8559 74.7778L0.426758 129.134L20.0643 148.745L74.4537 94.4285L128.759 148.881Z" fill="#4F4F4F"/>
+            </g>
+            <defs>
+            <filter id="filter0_i_144_30" x="0.426758" y="0.712891" width="148.095" height="152.168" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="4"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.65 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_144_30"/>
+            </filter>
+            </defs>
+            </svg>
+          <h3 class="calendar-filter__months-block">
+            {{ month|date:"d E"}}
+          </h3>
+          <ul class="calendar-filter__list filter-list">
+            <h3 class="filter-list__title">Cобытий в этот день: <span>{{ event_counts }}</span></h3>
+          </ul>
+          <ul class="calendar-filter__list filter-list">
+            <h3 class="filter-list__title">Теги в этот день: </h3>
+            {% for tag in tags %}
+            <li class="filter-list__item">
+              <label for="" class="filter-list__label">{{ tag|upper }}</label>
+            </li>
+            {% endfor %}
+          </ul>
+          <ul class="calendar-filter__list filter-list">
+            <h3 class="filter-list__title">События с KYC:</h3>
+            {% for event in events %}
+              {% if event.have_kyc %}
+            <li class="filter-list__item">
+                <label for="" class="filter-list__label">{{ event.title }}</label>
+            </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="calendar__days">
+        {% current_date as current_date %}
+        {% for event in events %}
+          {% if event.date < current_date %}
+              {% if event.deadline < current_date %}
+              <div class="calendar__day calendar-day calendar-red">
+                  <div class="calendar-day__time">
+                  <h4 class="calendar-day__date calendar-text">{{ event.date|date:"d E" }}</h4>
+                  <span class="calendar-day__time-text calendar-text">Событие закончилось</span><span class="calendar-day__time-nums" style="font-size: 19px;" data-event="{{ event.title }}"></span>
+                   </div>
+               <div class="calendar__text">
+                <h3 class="calendar-day__title calendar-text">{{ event.title }}</h3>
+                <p class="calendar-day__descrption calendar-text">{{ event.description }}</p>
+                <div class="calendar-day__tags">
+                {% for tag in event.tag.all %}
+                  #{{ tag.name|add:" "|upper }}
+                {% endfor %}
+                </div>
+               </div>
+              </div>
+              {% else %}
+                <div class="calendar__day calendar-day calendar-orange">
+                  <div class="calendar-day__time">
+                    <h4 class="calendar-day__date calendar-text">{{ event.date|date:"d E" }}</h4>
+                    <span class="calendar-day__time-text calendar-text">Событие закончится</span><span class="calendar-day__time-nums" style="font-size: 19px;" data-event="{{ event.title }}">{{ event.deadline|date:'d.m.Y H:i'|add:" мск" }}</span>
+                  </div>
+                  <div class="calendar__text">
+                    <h3 class="calendar-day__title calendar-text">{{ event.title }}</h3>
+                    <p class="calendar-day__descrption calendar-text">{{ event.description }}</p>
+                      <div class="calendar-day__tags">
+                        {% for tag in event.tag.all %}
+                          #{{ tag.name|add:" "|upper }}
+                        {% endfor %}
+                      </div>
+                  </div>
+                </div>
+              {% endif %}
+          {% else %}
+          <div class="calendar__day calendar-day calendar-green">
+              <div class="calendar-day__time">
+                <h4 class="calendar-day__date calendar-text">{{ event.date|date:"d E" }}</h4>
+                <span class="calendar-day__time-text calendar-text">Событие начнется в</span><span class="calendar-day__time-nums" data-event="{{ event.title }}">{{ event.date|date:'H:i'|add:" мск" }}</span>
+              </div>
+               <div class="calendar__text">
+                <h3 class="calendar-day__title calendar-text">{{ event.title }}</h3>
+                <p class="calendar-day__descrption calendar-text">{{ event.description }}</p>
+                <div class="calendar-day__tags">
+                {% for tag in event.tag.all %}
+                  #{{ tag.name|add:" "|upper }}
+                {% endfor %}
+                </div>
+               </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% for event in events %}
+  <div class="calendar-block-modal" data-event="{{ event.title }}">
+    <div class="calendar-day__time">
+      <h4 class="calendar-day__date calendar-text"></h4>
+      <span class="calendar-day__time-text calendar-text" style="display: none">Событие начинется в</span><span class="calendar-day__time-nums" style="display: none;" data-date="{{ event.date|date:'H:i:00' }}">{{ event.date|date:'H:i'|add:" мск" }}</span>
+    </div>
+    <h3 class="calendar-day__title calendar-text"></h3>
+    <div class="calendar__text">
+      <h4 class="calendar-block-modal__helper-text">Описание:</h4>
+      <p class="calendar-day__descrption calendar-text">{{ event.description }}</p>
+    </div>
+    <div class="calendar__text">
+      <h4 class="calendar-block-modal__helper-text">Полное описание:</h4>
+      <p class="calendar-day__descrption calendar-text">
+        {{ event.content|safe }}
+      </p>
+    </div>
+    <button class="calendar-block-modal__close btn btn-orange">Закрыть</button>
+  </div>
+{% endfor %}
+
+{% endblock %}
+
+{% block script %}
+  <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+

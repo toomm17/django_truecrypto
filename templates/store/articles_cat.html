@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Статьи
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+  <section class="new">
+    <div class="container">
+      <div class="new__wrap" style="text-align: center; font-size: 21px">
+        <p>Раздел со статьями на нашем сайте находится в разработкe.</p>
+        <p>Сейчас вы можете ознакомиться с нашими статьями на сайте Ghost.</p>
+        <p><iframe width="560" height="315" src="https://www.youtube.com/embed/mWOSGPyiFJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></p>
+        <a href="https://truecrypto.ghost.io" class="btn btn-orange" style="margin-top: 25px;">Перейти на Ghost</a>
+      </div>
+    </div>
+  </section>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'include/footer.html' %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %} %}

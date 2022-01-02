@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Поддержка
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+  <section class="help">
+    <div class="container">
+      <h1 class="help__title title">Поддержка</h1>
+      <p class="help__text text">У нас есть Агент поддержки, который оперативно ответит на любые ваши вопросы связанные с  TrueCrypto, также вы можете направить свои идеи или пожелания.</p>
+      <p class="help__text text">Режим работы — ежедневно, с 10:00 до 20:00 (мск)</p>
+      <a href="https://t.me/TrueCrypto_Support" class="btn btn-orange" style="margin-top: 25px;">Перейти к диалогу</a>
+    </div>
+
+    <div class="help__polygon contacts__polygon">
+       
+     <object class="heardpones" type="image/svg+xml" data="{% static 'img/headpones.svg' %}"></object>
+    </div>
+  </section>
+
+  {% endblock %}
+ 

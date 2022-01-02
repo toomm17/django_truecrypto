@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Вход
+{% endblock %}
+
+{% block navbar %}
+    {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="modal-login">
+    <form method="post" class="modal-login__form">
+      {% csrf_token %}
+      <h2 class="modal-login__title subtitle">Введите вашу почту</h2>
+       {% for filed in form %}
+        {{ filed }}
+       {% endfor %}
+      <button type="submit" class="btn btn-orange">Войти в аккаунт</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+

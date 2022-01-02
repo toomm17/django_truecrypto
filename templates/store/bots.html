@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Боты
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <section class="bots">
+    <div class="container" style="text-align: center;">
+      <h1 class="bots__title title">Боты</h1>
+      <h3 style="font-weight: 400;">Данный раздел в разработке, присылайте идеи автоматизации нам в предложку. Мы будем искать возможность написать ботов для вас, чтобы упростить вашу жизнь.</h1>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'include/footer.html' %}
+{% endblock %}
+
+{% block script %}
+  <script>
+
+function accordionEvent(wrap){
+  let accordionBtns = wrap.querySelectorAll('.accordion-block__polygon');
+
+  accordionBtns.forEach(btn => {
+    let parentBlock = btn.parentElement.parentElement;
+    
+    btn.addEventListener('click', function(){
+      let panel = parentBlock.querySelector('.accordion-block__panel');
+
+      parentBlock.classList.toggle('accordion-active')
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+        panel.style.marginTop =  null;
+      } else {
+        panel.style.marginTop =  '40px';
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    })
+  });
+  
+}
+
+accordionEvent(document.querySelector('.bots-wrap'))
+  </script>
+{% endblock %}

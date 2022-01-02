@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  {{ article.title }}
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <section class="news">
+      <div class="container">
+        <div class="news__header slider-btn-wrap">
+          <button class="btn news__prev slider-btn slider-btn-left">
+            <object type="image/svg+xml" data="{% static 'img/prev.svg' %}"></object>
+            Назад
+          </button>
+          <div class="news__text">
+            <h1 class="news__title title">{{ article.title }}</h1>
+            <span class="news__date">{{ article.created_at|date:"d E Y"|add:" г."}}</span>
+          </div>
+          <button class="btn slider-btn news__next slider-btn-right">
+            Следующая статья
+            <object type="image/svg+xml" data="{% static 'img/next.svg' %}"></object>
+          </button>
+        </div>
+        <div class="news__info">
+          <div class="news__image">
+            <img src="{{ article.image.url }}" alt="main image news page">
+          </div>
+          <h2 class="subtitle news__subtitle">
+            {{ article.title }}
+          </h2>
+          <p class="text news__description">
+            {{ article.text }}
+          </p>
+          <div class="news__wrap slider-btn-wrap">
+          {% if previous_article %}
+            <div class="news__block news-block">
+              <img src="{{ previous_article.image.url }}" alt="slide img">
+              <a href="{% url 'article_detail' article.category.slug previous_article.slug %}" class="btn news-block__btn slider-btn slider-btn-left">
+                <object type="image/svg+xml" data="{% static 'img/prev.svg' %}"></object>
+                Прошлая статья
+              </a>
+            </div>
+          {% else %}
+            <div class="news__block news-block">
+              <img src="" alt="">
+              <a href="#" class="btn news-block__btn slider-btn slider-btn-left">
+                <object type="image/svg+xml" data="{% static 'img/prev.svg' %}"></object>
+                Прошлая статья
+              </a>
+            </div>
+          {% endif %}
+            {% if next_article %}
+            <div class="news__block news-block">
+              <img src="{{ next_article.image.url }}" alt="slide img">
+              <a href="{% url 'article_detail' article.category.slug next_article.slug %}" class="btn news-block__btn slider-btn slider-btn-right">
+                Следующая статья
+                <object type="image/svg+xml" data="{% static 'img/next.svg' %}"></object>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+    </section>
+  </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'include/footer.html' %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %} %}

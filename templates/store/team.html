@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  О нас
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <section class="team">
+    <div class="container">
+      <div class="team__logo">
+        <img src="{% static 'img/logo.png' %}" alt="team logo">
+      </div>
+      <p class="team__description text">
+        TrueCrypto — Наша команда решила написать целый курс по криптовалюте как для самых-самых новичков в этой сфере, так и для опытных пользователей. Курс уже состоит из 40+ статей и они пополняются с высокой скоростью. Эти статьи включают в себя всю информацию, которой хватит каждому для быстрого и опытного старта в данной сфере. Мы очень постарались и активно работали на протяжении 3-х месяцев над этим.
+      </p>
+
+      <h1 class="team__title title">Наша команда</h1>
+
+      <div class="team__wrap team-wrap">
+        <div class="team-wrap__block team-block team-block__polygon-green">
+          <div class="team-block__polygon">
+            <svg class="polygon" width="198" height="186" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#28EA3B"/>
+              <defs>
+              <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0077FF"/>
+              <stop offset="1" stop-color="#0077FF"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="team-block__name text">ForfuNV</h4>
+          <p class="team-block__prof text">Designer</p>
+        </div>
+        <div class="team-wrap__block team-block team-block__polygon-red">
+          <div class="team-block__polygon">
+            <svg class="polygon" width="186" height="186" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#E22525"/>
+              <defs>
+              <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E22525"/>
+              <stop offset="1" stop-color="#E22525"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="team-block__name text">Dave</h4>
+          <p class="team-block__prof text">CEO</p>
+        </div>
+        <div class="team-wrap__block team-block team-block__polygon-blue">
+          <div class="team-block__polygon">
+            <svg class="polygon" width="186" height="186" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#28A8EA"/>
+              <defs>
+              <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#28A8EA"/>
+              <stop offset="1" stop-color="#28A8EA"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="team-block__name text">Syaber</h4>
+          <p class="team-block__prof text">CEO</p>
+        </div>
+        <div class="team-wrap__block team-block team-block__polygon-orange">
+          <div class="team-block__polygon">
+            <svg class="polygon" width="186" height="186" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#E29625"/>
+              <defs>
+              <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#E29625"/>
+              <stop offset="1" stop-color="#E29625"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="team-block__name text">Truedad</h4>
+          <p class="team-block__prof text">CO-Founder</p>
+        </div>
+        <div class="team-wrap__block team-block team-block__polygon-purple">
+          <div class="team-block__polygon">
+            <svg class="polygon" width="186" height="186" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#B125E2"/>
+              <defs>
+              <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#B125E2"/>
+              <stop offset="1" stop-color="#B125E2"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="team-block__name text">Oleg</h4>
+          <p class="team-block__prof text">Developer</p>
+        </div>
+        <div class="team-wrap__block team-block team-block__polygon-yellow">
+          <div class="team-block__polygon">
+            <svg class="polygon" width="186" height="186" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#DEE225"/>
+              <defs>
+              <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#DEE225"/>
+              <stop offset="1" stop-color="#DEE225"/>
+              </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="team-block__name text">Alexey</h4>
+          <p class="team-block__prof text">Редактор</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
+  <!-- main js -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

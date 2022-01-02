@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  {{ category.name }}
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <section class="articles">
+      <div class="container">
+        <h1 class="title articles__maintitle">{{ category.name }}</h1>
+
+        <div class="articles__wrap row">
+          {% for article in articles %}
+          <a href="{% url 'article_detail' article.category.slug article.slug %}" class="articles__block">
+            <span class="articles__image"><img src="{{ article.image.url }}" alt="article 1 image"></span>
+            <h3 class="articles__title subtitle">{{ article.title }}</h3>
+            <p class="articles__date text">{{ article.created_at|date:"d E Y"|add:" г." }}</p>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'include/footer.html' %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %} %}

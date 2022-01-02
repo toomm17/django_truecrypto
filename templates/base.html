@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static 'img/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>{% block title %}Главная{% endblock %}</title>
+</head>
+
+<body>
+  <div class="mask"></div>
+
+  {% block navbar %}
+    {% include 'include/new_nav.html'%}
+  {% endblock %}
+
+  {% block content %}
+  <div class="content">
+    <main class="main">
+      <div class="container">
+        <div class="main__wrapper row">
+          <div class="main__text">
+            <h1 class="main__title title">Ещё не поздно быть в числе <span class="orange-text">первых</span></h1>
+            <p class="main__description text">Начни своё погружение в мир криптовалюты вместе с нашей командой.</p>
+            <div class="main__nums main-nums row">
+              <div class="main-nums__block">
+                <h4 class="main-nums__number orange-text ">300 000$</h4>
+                <span class="main-nums__text text">мы заработали менее, чем за 1 год</span>
+              </div>
+              <div class="main-nums__block">
+                <h4 class="main-nums__number orange-text ">50+ статей</h4>
+                <span class="main-nums__text text">обучающего материала</span>
+              </div>
+            </div>
+            <a href="https://t.me/TrueCryptoPay_bot" target="blank"class="btn btn-orange">Оформить подписку</a>
+          </div>
+          <div class="main__image">
+            <img src="{% static 'img/main.png' %}" alt="main image">
+          </div>
+        </div>
+      </div>
+    </main>
+  
+    <section class="contacts">
+      <div class="container">
+        <h2 class="contacts__title subtitle">
+          Контакты
+        </h2>
+        <div class="contacts__wrapper row">
+          <a href="https://vk.com/true_crypto" target="blank" class="contacts__block">
+            <div class="contacts__polygon">
+              <div class="polygon-border-wrap polygon-blue">
+                <div class="polygon-border"></div>
+                <div class="polygon-border polygon-border-left"></div>
+                <div class="polygon-border polygon-border-right"></div>
+              </div>
+              <svg class="polygon" width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#0077FF"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0077FF"/>
+                <stop offset="1" stop-color="#0077FF"/>
+                </linearGradient>
+                </defs>
+                </svg>
+                <object class="icon" type="image/svg+xml" data="{% static 'img/vk.svg' %}"></object>              
+            </div>
+            <p class="contacts__text-polygon text">Группа ВКонтакте</p>
+          </a>
+          <a href="https://www.youtube.com/c/truecryptoo" target="blank" class="contacts__block">
+            <div class="contacts__polygon">
+              <div class="polygon-border-wrap polygon-red">
+                <div class="polygon-border"></div>
+                <div class="polygon-border polygon-border-left"></div>
+                <div class="polygon-border polygon-border-right"></div>
+              </div>
+              <svg class="polygon" width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#FF0000"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF0000"/>
+                <stop offset="1" stop-color="#FF0000"/>
+                </linearGradient>
+                </defs>
+                </svg>
+                <object class="icon" type="image/svg+xml" data="{% static 'img/youtube.svg' %}"></object>              
+            </div>
+            <p class="contacts__text-polygon text">Youtube «TrueCrypto»</p>
+          </a>
+          <a href="https://t.me/truedad_crypto" target="blank" class="contacts__block">
+            <div class="contacts__polygon">
+              <div class="polygon-border-wrap polygon-light-blue">
+                <div class="polygon-border"></div>
+                <div class="polygon-border polygon-border-left"></div>
+                <div class="polygon-border polygon-border-right"></div>
+              </div>
+              <svg class="polygon" width="218" height="244" viewBox="0 0 218 244" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M96.5 4.21688C104.235 -0.248941 113.765 -0.248941 121.5 4.21688L204.753 52.2831C212.488 56.7489 217.253 65.0021 217.253 73.9338V170.066C217.253 178.998 212.488 187.251 204.753 191.717L121.5 239.783C113.765 244.249 104.235 244.249 96.5 239.783L13.2468 191.717C5.5118 187.251 0.746826 178.998 0.746826 170.066V73.9338C0.746826 65.0021 5.5118 56.7489 13.2468 52.2831L96.5 4.21688Z" fill="#25A3E2"/>
+                <defs>
+                <linearGradient id="paint0_linear_1708_433" x1="-16" y1="122.926" x2="234" y2="122.926" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#25A3E2"/>
+                <stop offset="1" stop-color="#25A3E2"/>
+                </linearGradient>
+                </defs>
+                </svg>
+                <object class="icon" type="image/svg+xml" data="{% static 'img/tg.svg' %}"></object>              
+            </div>
+            <p class="contacts__text-polygon text">Наш Telegram</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <h2 class="contacts__title subtitle">
+          Прочие проекты создателей курса
+        </h2>
+        <div class="contacts__wrapper row" id="another">
+          <a href="https://t.me/cryptosyaber" target="blank" class="contacts__block">
+            <img src="{% static 'img/channel.png' %}" alt="" style="width: 220px; height: 230px">
+            <p class="contacts__text-polygon text">Telegram «CryptoSyaber»</p>
+          </a>
+        </div>
+    </section>
+    
+  </div>
+  {% endblock %}
+
+  {% block footer %}
+    {% include 'include/footer.html' %}
+  {% endblock %}
+
+  {% block script %}
+    <script src="{% static 'js/main.js' %}"></script>
+  {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Новости
+{% endblock %}
+
+{% block navbar %}
+  {% include 'include/new_nav.html' %}
+{% endblock %}
+
+{% block content %}
+
+  <section class="new">
+    <div class="container">
+      <h1 class="new__title title">Новости</h1>
+      <h1 class="new__title" style="font-weight:400;">В данном разделе будут публиковать новости про наш проект.<br>Ивенты, события, полезные ссылки и так далее.</h1>
+      <h1 class="new__title" style="font-weight:400;">Следите за разделом "Новости", если хотите быть в курсе развития нашего проекта!</h1>
+    </div>
+  </section>
+
+{% endblock %}
